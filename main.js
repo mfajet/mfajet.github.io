@@ -9,7 +9,7 @@ var addMoreImages = function(){
         bgNum++;
     }
     var body =document.body;
-    body.background= "url(images/face" + bgNum + ".PNG)";
+    body.style.background= "url(images/face" + bgNum + ".PNG)";
 
     for(var j=0; j<=5; j++){
         if((i+j)%62!=13 && (i+j)%62!=31 && (i+j)%62!=0){
