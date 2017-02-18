@@ -1,7 +1,7 @@
 var mainDiv = document.getElementById("main-div");
 console.log(mainDiv);
 var loadMore = document.createElement("button");
-loadMore.appendChild(document.createTextNode("Can't get enough of my face?"));
+loadMore.appendChild(document.createTextNode("Can't get enough of Mark's face?"));
 var i = 1;
 var addMoreImages = function(){
     for(var j=0; j<=5; j++){
