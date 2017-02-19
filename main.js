@@ -52,8 +52,8 @@ function checkKey(e) {
         from.src=whiteURL;
         to.src=fromSrc;
         from.style.width = "100px";
+        isSolved();
     }
-    isSolved();
 }
 var heightOfOnePiece;
 var widthOfOnePiece;
@@ -147,7 +147,7 @@ function isSolved(){
     solved = true;
     for (var i = 1; i <=9; i++) {
         var img = document.getElementById(i);
-        if(used[0] != i && img.src != imagePieces[i-1]){
+        if(used[0] != (i-1) && img.src != imagePieces[i-1]){
             solved = false
         }
     }
