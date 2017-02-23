@@ -1,7 +1,7 @@
 html, body{
 	font-size:16px;
 	color: #dfdfdf;
-	background-color: #063647; 
+	background-color: #063647;
 }
 
 a {
@@ -85,9 +85,17 @@ a.nav-item:hover {
 }
 
 .void-background {
-	background-color: transparent; 
+	background-color: transparent;
 }
 
+.nav {
+	
+	position: fixed;
+	width: 100%;
+}
+.nav-right{
+	right:0;
+}
 @media screen and (max-width: 768px) {
 	.nav-menu {
 		background-color: #063647;
