@@ -8,7 +8,7 @@ function start(){
         }
     image = new Image();
     imagePieces =[];
-    image.src = '/markFaces/face' + faceNum + '.PNG';
+    image.src = './markFaces/face' + faceNum + '.PNG';
     image.onload = cutImageUp;
     emptyBox = 1;
 
