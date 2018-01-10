@@ -100,7 +100,7 @@ function cutImageUp() {
         anImageElement.style.height= "auto";
     }
     white.onload = cropWhite;
-    white.src ="/white.PNG";
+    white.src ="./white.PNG";
 }
 
 function cropWhite() {
