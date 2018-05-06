@@ -15,6 +15,10 @@ var addMoreImages = function(){
         if((i+j)%62!=13 && (i+j)%62!=31 && (i+j)%62!=0){
             var face = document.createElement("img");
             face.src = "images/face" + (i+j)%62 + ".PNG.webp";
+            if(face.naturalWidth === 0){
+                face.src = "images/face" + (i+j)%62 + "-fs8.png";
+                body.style.background= "url(images/face" + bgNum + "-fs8.png)";
+            }
             face.setAttribute("width", "90%");
             mainDiv.appendChild(face);
         }else{
