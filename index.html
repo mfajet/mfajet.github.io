@@ -1,207 +1,335 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
+
 <head>
-	<title>Portfolio</title>
-	<!-- css files -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-
-	<!-- external libraries-->
-	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-
-	<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-	<meta name="author" content="Hassan Ali">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-	<body>
-		<!-- Navbar -->
-		<nav class="nav void-background">
-			<!-- This "nav-menu" is hidden on mobile -->
-			<!-- Add the modifier "is-active" to display it on mobile -->
 
-			<div class="nav-left">
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
 
-				<a target="_blank" href="http://github.com/mfajet" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-github"></i>
-					</span>
-				</a>
-				<a target="_blank" href="https://linkedin.com/in/markfajet" class="nav-item">
-					<span class="icon">
-						<i class="fa fa-linkedin-square"></i>
-					</span>
-				</a>
-				<a target="_blank" href="https://devpost.com/mfajet" class="nav-item">
-					<span class="icon">
-						<img src="assets/img/devpost.png" />
-					</span>
-				</a>
-			</div>
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Mark Fajet</h1>
+            <h2>Software Development Engineer</h2>
+            <a href="#" class="btn-rounded-white">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
 
-			<div class="nav-right nav-menu">
-				<a class="nav-item" href="#about">About</a>
-				<a class="nav-item" href="#projects">Projects</a>
-				<a class="nav-item" href="#social">Social</a>
-			</div>
+        <div id="lead-overlay"></div>
 
-			<!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-			<!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-			<span class="nav-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
-		</nav>
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
 
-		<!-- About Me -->
-		<section id="about" class="section section-1">
-			<div class="container has-text-centered">
-				<!-- Source: https://flic.kr/p/pAZBNK -->
-				<img class="avatar" src="assets/img/Programming.png">
-			</div>
-			<div class="container"></br>
-				<p class="intro">
-					My name is Mark Fajet. I'm a software development engineer with a passion for mathematics and algorithms. I recently graduated from Florida International University obtaining a Bachelors of Science in Computer Science and a separate Bachelors of Science in Mathematical Sciences. I enjoy learning and I enjoy helping others learn as well. My favorite programming language is Haskell because the restrictions caused by its necessity for purity easily lead to a clean and consistent style of coding. For application programming, my language of choice is Python.
-				</p>
-			</div>
-		</section>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <div class="col-md-8">
+			<p>
+			My name is Mark Fajet. I'm a software development engineer working for Amazon Web Services with a passion for mathematics and algorithms. I recently graduated from Florida International University with  a Bachelors of Science in Computer Science and a separate Bachelors of Science in Mathematical Sciences with Summa Cum Laude. I enjoy learning and I enjoy helping others learn as well. My favorite programming language is Haskell because the restrictions caused by its necessity for purity easily lead to a clean and consistent style of coding. For application programming, my language of choice is Python. In my free time, I have found myself studying aspects of machine learning and playing guitar.
+			</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
 
-		<!-- Projects -->
-		<section  id="projects" class="section section-2">
-			<div class="has-text-centered">
-				<h3 class="title is-3">Projects</h3>
-			</div>
-			<div class="columns is-multiline is-desktop">
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="June 2018 – Ongoing">
+                <h3>Amazon</h3>
+                <h4>Software Development Engineer</h4>
+                <p>
+		Software Development Engineer on the Elastic File System team of Amazon Web Services. Built and maintained internal tooling in order to keep the service operating and improving.
+		</p>
+            </div>
 
-				<!-- Project 1 -->
-				<div class="column">
-					<div class="box project-text">
-						<article>
-							<div>
-								<figure class="image project-figure">
-									<a target="_blank" href="https://github.com/FIU-SCIS-Senior-Projects/Web-Page-Archiving-and-Content-Analysis-1.0"><img src="assets/img/wat.png" alt="web archive tool icon"></a>
-								</figure>
-							</div>
-							<div>
-								<p>
-									Tool that allows users to download large batches of websites into a custom, compressed file format which allows for easy programmatic access. Additionally, it extracts the metadta and main content of downloaded articles.
-								</p>
-							</div>
-						</article>
-					</div>
-				</div>
+	   <div data-date="May 2017 – August 2017">
+                <h3>MathWorks</h3>
+                <h4>Engineering Development Group Intern</h4>
+                <p>
+Carried out deep learning benchmarking in MATLAB and Python frameworks such as Tensorflow, Keras, and MXNet across multiple systems: CPU, single GPU, and multiple GPUs. Conducted exploratory data analysis in MATLAB where I employed linear regression, K-Nearest Neighbors, decision trees, and SVM in order to build models for prediction and classification to diagnose long startup times.
+		</p>
+            </div>
 
-					<!-- Project 1 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<a target="_blank" href="https://www.youtube.com/watch?v=hEXzK07r2CI&feature=youtu.be&list=PLPDgudJ_VDUexTfFNhBY7_psvOwjce3xq"><img src="assets/img/culturefitt.jpg" alt="culture fit icon"></a>
-									</figure>
-								</div>
-								<div>
-									<p>
-										Web application created as a recruitment analysis tool. It analyzes tweets from users in order to see if they'd be a good fit of a certain culture. I helped create the backend. I used the Twitter API and Node.js for my part of this project. In addition, I facilitated the running of R functionality done by a data analyst on the team. This project was recognized as top 10 projects at MLH Prime.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-					<!-- Project 2 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<a target="_blank" href="https://github.com/ROAM-The-Game/"><img src="assets/img/roam.jpg" alt="Image"></a>
-									</figure>
-								</div>
-								<div>
-									<p>
-										Game description can be found in GitHub README. For my part, I wrote a Python microservice in order to retrieve and style a map obtained from the Google Static Maps API. In addition, I did some basic math in order to make a function that allows me to return adjacent areas to that original map so that there is a seamless transition from one map to another.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-					<!-- Project 1 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<a target="_blank" href="https://devpost.com/software/night-watch"><img src="assets/img/nightwatch.jpg" alt="night watch icon"></a>
-									</figure>
-								</div>
-								<div>
-									<p>
-										This project was created at MangoHacks where it won second place as well as some sponsor prizes. It uses EMG and temperature sensors in order to detect muscle movement and breathing. The purpose was for people with disorders (like epilepsy or sleep apnea) to be able to have something monitoring them as they sleep. I made the mobile application that people could use in order to interface with the data collected by the sensors. I used React Native and MaterialUI.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-					<!-- Project 2 -->
-					<div class="column">
-						<div class="box project-text">
-							<article>
-								<div>
-									<figure class="image project-figure">
-										<a target="_blank" href="https://undergradresearch.fiu.edu/"><img src="assets/img/undergrad.jpg" alt="Image"></a>
-									</figure>
-								</div>
-								<div>
-									<p>
-										Wordpress website that I built as part of the Honors College at FIU. It allows undergraduate students to search for and apply to research positions as well as allowing them to find information about various resources available to them.
-									</p>
-								</div>
-							</article>
-						</div>
-					</div>
-			</div>
-			<div class="has-text-centered">
-				<p>Over the years, I've made many projects, serious and silly. Check out my GitHub and Devpost accounts for more projects.</p>
-			</div>
-		</section>
+            <div data-date="August 2016 – May 2018">
+                <h3>Florida International University</h3>
+                <h4>Learning Assistant</h4>
+                </p>I assisted in an interactive classroom for Fundamentals of Computer Systems. Course description: "Overview of computer systems organization. Data representation. Machine and assembly language programming." As well as another course called Structured Computer Organization that focused on caching, memory, and parallelism.
+		</p>
+            </div>
 
-		<!-- Social -->
-		<section id="social" class="section section-3">
-			<div class="container">
-				<div class="has-text-centered">
-					<h3 class="title is-3">Let's Socialize</h3>
-				</div>
-				<div class="social-container columns">
-					<div class="column is-4 has-text-centered">
-						<a target="_blank" href="https://linkedin.com/in/markfajet"><img class="" src="assets/img/linkedin.png"></a>
-					</div>
-					<div class="column is-4 has-text-centered">
-						<a target="_blank" href="https://www.github.com/mfajet/"><img class=""  src="assets/img/github2.png"></a>
-					</div>
-					<div class="column is-4 has-text-centered">
-						<a target="_blank" href="https://www.devpost.com/mfajet"><img class="" src="assets/img/devpost.png"></a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- For fun -->
-		<section id="social" class="section has-text-centered section-2">
-			<div class="container">
-				<div class="has-text-centered">
-					<h3 class="title is-3">Let's Have Fun</h3>
-				</div>
-				<a href="/oldSite">My old website</a></br>
-				<a href="/faceGame">Game</a>
-			</div>
-		</section>
+            <div data-date="September 2015 - May 2018">
+                <h3>Florida International University Honors COllege</h3>
+                <h4>Web Developer</h4>
+		</p>Built a website from scratch using Node and PostgreSQL as a backend and React for the frontend. Managed and developed many sites. Some of these were wordpress sites where I did a lot of work in PHP to add new requested functionality. Others used Angular and Firebasse.</p>
+            </div>
 
-		<!-- Footer -->
-		<section class="section-4 has-text-centered container">
-			<a href="https://github.com/helfi92/studorlio">Website layout forked from from Hassan Ali</a>
-		</section>
+            <div data-date="September 2015 - May 2018">
+                <h3>Florida International University Honors COllege</h3>
+                <h4>Peer Instructor</h4>
+		</p>Taught Programming for Non-Programmers, a course where students learned basic concepts of programming such as variables, decision making, functions, and Object Oriented Programming (OOP).</p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
 
-		<!-- Scripts  -->
-		<script src="controller.js"></script>
-	</body>
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>Bachelor of Science in Mathematics</h3>
+            <span class="education-date">August 2014 - May 2018</span>
+            <h4>Florida International University</h4>
+            <p>
+                Activities and societies: Statistics Club, American Statistical Association, math club
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <span class="education-date">August 2014 - May 2018</span>
+            <h4>Florida International University</h4>
+            <p>Activities and societies: Honors college, Association for Computing Machinery, hackathons</p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Mathematics for Machine Learning: PCA</h3>
+            <span class="education-date">October 2018</span>
+            <h4>Coursera <a href="https://www.coursera.org/account/accomplishments/verify/AGPCKW5US3ZB">License AGPCKW5US3ZB</a></h4>
+            <p>This intermediate-level course introduces the mathematical foundations to derive Principal Component Analysis (PCA), a fundamental dimensionality reduction technique. We'll cover some basic statistics of data sets, such as mean values and variances, we'll compute distances and angles between vectors using inner products and derive orthogonal projections of data onto lower-dimensional subspaces. Using all these tools, we'll then derive PCA as a method that minimizes the average squared reconstruction error between data points and their reconstruction.</p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Machine Learning with Python</h3>
+            <span class="education-date">September 2018</span>
+            <h4>Coursera <a href="https://www.coursera.org/account/accomplishments/verify/BBLX47UKVKDS">License BBLX47UKVKDS</a></h4>
+            <p>This course provides a general overview of Machine Learning topics such as supervised vs unsupervised learning,  model evaluation, and Machine Learning algorithms using Python and frameworks such as scikit-learn, SciPy, and NumPy</p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/wat.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Web Page Archiving and Content Analysis Tool</h3>
+                        <p>
+                            Created a desktop application that allows users to download large batches of websites into a custom, compressed file format which allows for easy programmatic access and extracts the metadata and main content of downloaded articles using Natural Language Processing. In collaboration with MIT Lincoln Lab.    
+                        </p>
+                        <a href="https://github.com/mfajet/WAT">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/rick.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Neural Gonna Give You Up</h3>
+                        <p>
+                            Developed encoder-decoder neural network to process MIDI song files to make them sound more like Never Gonna Give You Up by Rick Astley. This project was awarded Best Artificial Intelligence and Machine Learning Hack at UHack 2017.
+                        </p>
+                        <a href="https://devpost.com/software/neural-gonna-give-you-up">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/culturefitt.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Culture FitT</h3>
+                        <p>
+                            Web application created as a recruitment analysis tool. It analyzes tweets from users in order to see if they'd be a good fit of a certain culture. I helped create the backend. I used the Twitter API and Node.js for my part of this project. In addition, I used child processes to run data analysis in R. This project was recognized as top 10 projects at MLH Prime.
+                        </p>
+                        <a href="https://devpost.com/software/culture-fit">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+                 
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/roam.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>ROAM</h3>
+                        <p>
+                            An artificial reality game, Game description can be found in GitHub README. For my part, I wrote a Python microservice in order to retrieve and style a map obtained from the Google Static Maps API. In addition, I did some basic math in order to make a function that allows me to return adjacent areas to that original map so that there is a seamless transition from one map to another. This project won 2nd place at MIA Game Jam in 2016
+                        </p>
+                        <a href="https://github.com/ROAM-The-Game/">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/nightwatch.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Night Watch</h3>
+                        <p>
+                            This project was created at MangoHacks where it won second place as well as some sponsor prizes. It uses EMG and temperature sensors in order to detect muscle movement and breathing. The purpose was for people with disorders (like epilepsy or sleep apnea) to be able to have something monitoring them as they sleep. I made the mobile application that people could use in order to interface with the data collected by the sensors. I used React Native and MaterialUI. This project won 2nd place and Best Social Good Hack at MangoHacks 2017
+                        </p>
+                        <a href="https://devpost.com/software/night-watch">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="project-image" src="images/trike.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Internet of Trikes</h3>
+                        <p>
+                            The smartest tricycle. Alexa integration, augmented reality, image processing, headlights, speakers.
+                        </p>
+                        <a href="https://devpost.com/software/pimp-my-trike">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Ruby</li>
+            <li>Node.js</li>
+            <li>AngularJs</li>
+            <li>React</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>F#</li>
+            <li>Haskell</li>
+            <li>git</li>
+            <li>vim</li>
+            <li>MATLAB</li>
+            <li>MxNet</li>
+            <li>SQL</li>
+            <li>CUDA</li>
+            <li>PHP</li>
+            <li>Linux</li>
+            <li>scikit-learn</li>
+            <li>SciPy</li>
+            <li>NumPy</li>
+            <li>HTML</li>
+            <li>SASS</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2> 
+        <p> You can message me on <a href="https://linkedin.com/in/markfajet">LinkedIn</a></p?
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2019 Mark Fajet
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/mfajet" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/markfajet" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
 </html>
