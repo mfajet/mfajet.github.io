@@ -94,4 +94,12 @@
         });
     });
 
+    // Load additional certificates
+    $('#view-more-certificates').click(function(e){
+        e.preventDefault();
+        $(this).fadeOut(300, function() {
+            $('#more-certificates').fadeIn(300);
+        });
+    });
+
 })(jQuery);
