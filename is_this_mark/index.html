@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Is this Mark?</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+  <script src="js/ml.js"></script>
+
+  <body>
+      <div class="main-div" id="main-div">
+        <h1 id="question">Is this Mark?</h1>
+      </div>
+      <img src="images/face1.JPG" id="face" width ="250" height="250"/>
+      <div>
+        <button onClick="isItMark()">Let's find out</button>
+        <button onClick="newPhoto()">Try a different photo</button>
+      </div>
+      <div>
+        <h2> About this page</h2>
+        <p>I've always loved making silly projects. It is even better whe I get to use my skills. What you see on this website is the results of a neural network I trained. In order to do so, I created a Convolutional Neural Network using Keras. I trained it on the <a href="http://vis-www.cs.umass.edu/lfw/">Labeled Faces in the Wild</a> dataset. Obviously, that dataset does not have pictures of my face in it. In order to make a quick binary classifier of my face. I simply took all the photos from that dataset and put them into a "Not_Mark_Fajet" folder. I then took about 500 photos of myself, some new, some old. In order to adjust for a class imbalance, I genereated thousands of "new" images by doing random crops, rotations, and zooms on these photos. None of the photos seen on this website were used in the training set.</p>
+
+        <p>After implementing and training the model in Keras using python, I saved the model and I am using it with TensorFlow.js. When a user clicks the "Let's find out" button, the browser is running the calculation by grabbing the image from the html and passing it through the neural network.</p>
+
+        <p>I have plans to improve this in the future. One of the things I wish to do is make a model to find faces before identifying. Collecting data on faces was an issue as I had to manually crop photos to squares containing my face. This work can and should be automated, extending the application of the models to not only tell if a face is mine, but being able to tell if and which face is mine in a photo with multiple faces.</p>
+        <p>In addition, I understand that there are many facial recognition systems that exist that are not built on thousands of photos of a single person's face. I'd like to explore creating a model trained to identify the similarities between faces in order to determine if a new face is mine based on how similar it is to a small set of my faces it has seen.</p>
+
+    </body>
+
+
+</html>
