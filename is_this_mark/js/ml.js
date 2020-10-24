@@ -32,7 +32,5 @@ const newPhoto = () => {
     const face = document.getElementById('face');
     header.innerHTML = 'Is this Mark?'
     const currentSrcNum = parseInt(face.src.substr(-5))
-    console.log(face.src);
-    console.log(face.src.substr("images/face".length));
     face.src = "images/face" + ((currentSrcNum % 12) +1)  +".JPG";
 }
