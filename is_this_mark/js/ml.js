@@ -10,15 +10,15 @@ get_model.then((model)=> {
 });
 
 
-const isItMark = () =>{
+const isItMark = async () =>{
   const header = document.getElementById('question');
   const face = document.getElementById('face');
   faceArr = tf.browser.fromPixels(face).resizeBilinear([250,250]);
-
+  if(!MODEL){
+    MODEL = await get_model;
+  }
   prediction = MODEL.predict(tf.expandDims(faceArr, 0));
-  console.log(prediction);
   value = prediction.dataSync()[0];
-  console.log(value);
   const isMark = (value < 0.5);
   if (isMark){
     header.innerHTML += ' Yes!';
