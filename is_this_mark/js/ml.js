@@ -1,6 +1,4 @@
-// import * as tf from '@tensorflow/tfjs';
-// import {loadGraphModel} from '@tensorflow/tfjs-converter';
-
+tf.setBackend('cpu');
 const MODEL_URL = './js_model/model.json';
 
 const get_model = tf.loadLayersModel(MODEL_URL);
