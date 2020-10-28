@@ -6,7 +6,7 @@ const onProgress = (progress) => {
   console.log(progress);
   const progressBar = document.getElementById('progress-bar');
   progressBar.innerHTML = (progress * 100) + "%";
-  progressBar.className = "progress-bar w-" + (progress * 100)
+  progressBar.setAttribute("style", "width:" + (progress * 100) + "%;");
 }
 const get_model = tf.loadLayersModel(MODEL_URL, {onProgress});
 
