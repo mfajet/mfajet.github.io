@@ -1,7 +1,9 @@
-// tf.setBackend('cpu');
 tf.enableProdMode();
 const MODEL_URL = './js_model/model.json';
 
+if (/Mobi/.test(navigator.userAgent)) {
+    tf.setBackend("cpu");
+}
 
 const onProgress = (progress) => {
   console.log(progress);
