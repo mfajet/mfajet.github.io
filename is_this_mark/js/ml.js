@@ -1,4 +1,5 @@
-tf.setBackend('cpu');
+// tf.setBackend('cpu');
+tf.enableProdMode();
 const MODEL_URL = './js_model/model.json';
 
 
@@ -26,6 +27,7 @@ const isItMark = async () =>{
   }
   prediction = MODEL.predict(tf.expandDims(faceArr, 0));
   value = prediction.dataSync()[0];
+  prediction.dispose();
   const isMark = (value < 0.5);
   if (isMark){
     header.innerHTML += ' Yes!';
