@@ -1,5 +1,5 @@
 var image;
-var used =[];
+let used =[];
 
 function start(){
     var faceNum = Math.floor(Math.random()*61 + 1);
@@ -63,7 +63,6 @@ var whiteURL;
 var imagePieces = [];
 
 function cutImageUp() {
-    used = [];
     widthOfOnePiece =this.width / 3;
     heightOfOnePiece=this.height / 3;
     var emptyPic = document.getElementById('1');
@@ -82,14 +81,19 @@ function cutImageUp() {
     }
 
     // imagePieces now contains data urls of all the pieces of the image
-
-    // load one piece onto the page
-    for (var i = 0; i < 9; i++) {
-        var r = Math.floor(Math.random() * 9);
-        while(used.indexOf(r)!=-1){
-            r= Math.floor(Math.random() * 9);
-        }
-        used.push(r)
+    let solvable = false;
+    while(!solvable){
+      used = [];
+      // load one piece onto the page
+      for (var i = 0; i < 9; i++) {
+          var r = Math.floor(Math.random() * 9);
+          while(used.indexOf(r)!=-1){
+              r= Math.floor(Math.random() * 9);
+          }
+          used.push(r)
+      }
+      solvable = isSolvable(used);
+      console.log(used);
     }
     var first = document.getElementById('1');
     first.src="";
@@ -119,6 +123,20 @@ function cropWhite() {
 
 
 }
+
+function isSolvable(arr){
+  let inversions = 0;
+  for (i=0;i<arr.length-1; i++){
+    for(j=i+1;j<arr.length; j++){
+      if(arr[i] && arr[j] && arr[i] > arr[j]){
+        inversions +=1;
+      }
+    }
+  }
+  console.log(inversions);
+  return (inversions % 2 == 0) && inversions !=0;
+}
+
 function solve(){
     for (var i = 1; i < 10; i++){
         var anImageElement = document.getElementById(i);
