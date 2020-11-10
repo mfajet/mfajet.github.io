@@ -1,5 +1,6 @@
 var image;
 let used =[];
+let notShown;
 
 function start(){
     var faceNum = Math.floor(Math.random()*61 + 1);
@@ -19,7 +20,6 @@ start();
 document.onkeydown = checkKey;
 var emptyBox = 1;
 function checkKey(e) {
-    console.log(emptyBox);
     moveTo= emptyBox
     e = e || window.event;
     if (e.keyCode == '38') {//up
@@ -46,6 +46,9 @@ function checkKey(e) {
        }
     }
     if(moveTo != emptyBox){
+        tmp = used[emptyBox-1]
+        used[emptyBox-1] = used[moveTo-1]
+        used[moveTo-1] = tmp
         var from = document.getElementById(emptyBox);
         var to = document.getElementById(moveTo);
         var fromSrc = from.src;
@@ -92,12 +95,13 @@ function cutImageUp() {
           }
           used.push(r)
       }
+      notShown = used[0];
       solvable = isSolvable(used);
-      console.log(used);
     }
     var first = document.getElementById('1');
     first.src="";
     for (var i = 2; i < 10; i++){
+        notShown = used[0];
         var anImageElement = document.getElementById(i);
         anImageElement.src = imagePieces[used[i-1]];
         anImageElement.style.width = "100px"
@@ -115,7 +119,6 @@ function cropWhite() {
             var context = canvas.getContext('2d');
             context.drawImage(white, widthOfOnePiece, heightOfOnePiece, widthOfOnePiece, heightOfOnePiece, 0, 0, canvas.width, canvas.height);
             whiteURL = (canvas.toDataURL());
-            console.log(whiteURL);
             var emptyPic = document.getElementById('1');
             emptyPic.src=whiteURL;
             emptyPic.style.width = "100px";
@@ -125,15 +128,7 @@ function cropWhite() {
 }
 
 function isSolvable(arr){
-  let inversions = 0;
-  for (i=0;i<arr.length-1; i++){
-    for(j=i+1;j<arr.length; j++){
-      if(arr[i] && arr[j] && arr[i] > arr[j]){
-        inversions +=1;
-      }
-    }
-  }
-  console.log(inversions);
+  let inversions = countInversions(arr);
   return (inversions % 2 == 0) && inversions !=0;
 }
 
@@ -149,7 +144,6 @@ function solve(){
 var butt = document.getElementById('butt');
 butt.onclick = solveOrReplay;
 function solveOrReplay(){
-    console.log("DSFsdf");
     if (solved){
         solved = false;
         start();
@@ -161,17 +155,35 @@ function solveOrReplay(){
     }
 }
 
+function countInversions(arr){
+  let inversions = 0;
+  for (i=0;i<arr.length-1; i++){
+    for(j=i+1;j<arr.length; j++){
+      if(arr[i] != notShown && arr[j] != notShown&& arr[i] > arr[j]){
+        inversions +=1;
+      }
+    }
+  }
+  return inversions;
+}
+function score(){
+  let inversions = countInversions(used);
+  return 9 - inversions;
+}
+
 function isSolved(){
     solved = true;
     for (var i = 1; i <=9; i++) {
         var img = document.getElementById(i);
-        if(used[0] != (i-1) && img.src != imagePieces[i-1]){
+        if(notShown != (i-1) && img.src != imagePieces[i-1]){
             solved = false
         }
     }
     if(solved){
         solve();
         butt.firstChild.data = "ANOTHER FACE!"
-        alert("Congratulations! Click OK to see my beautiful face!");
+        // alert("Congratulations! Click OK to see my beautiful face!");
+        return true;
     }
+    return false;
 }
